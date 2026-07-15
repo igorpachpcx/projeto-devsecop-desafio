@@ -1,5 +1,7 @@
-const API_KEY = process.env.API_KEY;
-const DB_PASSWORD = process.env.DB_PASSWORD;
+// eu sei que estas chaves não são alcançáveis sem um backend apropriado
+// deixei aqui apenas para simular o uso do github secrets
+// const API_KEY = process.env.API_KEY;
+// const DB_PASSWORD = process.env.DB_PASSWORD;
 
 // Busca tarefas do "banco de dados"
 fetch('db.json')

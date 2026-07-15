@@ -9,6 +9,10 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  API_KEY: ${{ secrets.API_KEY }}
+  DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+
 jobs:
   pipeline:
     name: Build, Segurança e Deploy
