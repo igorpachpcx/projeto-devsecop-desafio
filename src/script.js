@@ -14,9 +14,11 @@ fetch('db.json')
             list.appendChild(li);
         });
     })
-    .catch(err => {        
+    .catch(err => {    
+        console.error('Erro ao buscar tarefas: ', err);
+
         document.getElementById('db-status').innerText =
-            'Erro interno: ' + err.stack;
+            'Erro interno';
     });
 
 // Adiciona nova tarefa na tela
