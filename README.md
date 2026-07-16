@@ -39,6 +39,7 @@ A pipeline está **incompleta**. Os steps de segurança precisam ser implementad
 > Por fim, é feito o deploy no GitHub Pages.
 
 ### Fluxo resumido
+```
 Push na main
         ↓
 Checkout do código
@@ -52,6 +53,7 @@ Semgrep (busca por padrões vulneráveis)
 Grype (análise de dependências)
         ↓
 Deploy
+```
 
 ## URL de Produção
 > [Página](https://igorpachpcx.github.io/projeto-devsecop-desafio/)
