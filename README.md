@@ -16,14 +16,36 @@ A pipeline está **incompleta**. Os steps de segurança precisam ser implementad
 5. Documentar o funcionamento da pipeline neste README
 
 ## O que implementar
-- [ ] Secrets Scanning com **Gitleaks**
-- [ ] SAST com **Semgrep**
-- [ ] SCA com **Grype**
-- [ ] Deploy com **GitHub Pages**
+- [X] Secrets Scanning com **Gitleaks**
+- [X] SAST com **Semgrep**
+- [X] SCA com **Grype**
+- [X] Deploy com **GitHub Pages**
 
 ## Como a pipeline funciona
 > **Substitua este bloco pela sua explicação após implementar a pipeline.**
-> Descreva cada step, o que ele faz e por que ele é importante para a segurança.
+> A pipeline roda automaticamente a cada push para a main para validar a segurança da aplicação antes do deploy.
+> O primeiro passo é baixar o conteúdo do repositório para o ambiente do GitHub Actions.
+> O segundo passo é a build, uma validação simples da estrutura do projeto, pra ter certeza que todos os arquivos necessários estão disponíveis para o processo de build.
+> Gitleaks, responsável por apontar segredos e chaves expostos no código-fonte ou no histórico do repositório.
+> Coloquei as chaves no **GitHub Secrets**, apesar delas não serem usadas para nada.
+> Semgrep, o SAST faz a análise estática do código procurando por padrões inseguros de programação.
+> Grype, verifica as dependências do projeto apontando bibliotecas com vulnerabilidades conhecidas registradas em bancos públicos de consultoria de segurança.
+> Por fim, é feito o deploy no GitHub Pages.
+
+### Fluxo resumido
+Push na main
+        ↓
+Checkout do código
+        ↓
+Build
+        ↓
+Gitleaks (busca por chaves e senhas)
+        ↓
+Semgrep (busca por padrões vulneráveis)
+        ↓
+Grype (análise de dependências)
+        ↓
+Deploy
 
 ## URL de Produção
-> Adicione aqui o link do GitHub Pages após o deploy.
+> [Página](https://igorpachpcx.github.io/projeto-devsecop-desafio/)
